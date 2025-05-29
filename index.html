@@ -52,21 +52,37 @@
       text-align: left;
     }
 
-    /* Pantalla completa */
-    @media (min-width: 768px) {
-      .tab-pane {
-        padding-left: 0;
-      }
-
-      .tab-pane h5,
-      .tab-pane h6,
-      .tab-pane p {
-        text-align: left;
-      }
+    /* Imágenes de libros */
+    .libros-imgs {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: nowrap;
+      width: 100%;
+      margin: 30px 0;
     }
 
-    /* Responsive móvil */
-    @media (max-width: 767px) {
+    .libros-imgs img {
+      width: 30%;
+      max-width: 250px;
+      height: auto;
+      transition: all 0.3s ease;
+    }
+
+    /* Pantallas pequeñas - sin scroll, más pequeñas */
+    @media (max-width: 768px) {
+      .libros-imgs img {
+        width: 30%;
+        max-width: 120px;
+      }
+
+      .libros-imgs {
+        gap: 10px;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+      }
+
       .nav-tabs {
         flex-direction: column !important;
       }
@@ -85,14 +101,14 @@
         min-height: 300px;
       }
 
-      .row {
-        flex-direction: column;
-      }
-
       .tab-pane h5,
       .tab-pane h6,
       .tab-pane p {
         text-align: center;
+      }
+
+      .row {
+        flex-direction: column;
       }
     }
   </style>
@@ -130,15 +146,28 @@
         </ul>
 
         <div class="tab-content" id="miTabContent">
+          <!-- Re-Read -->
           <div class="tab-pane fade show active" id="re-read" role="tabpanel" aria-labelledby="re-read-tab">
             <h5 class="fw-bold mt-3">Nunca la lectura ha sido tan necesaria</h5>
             <p>En estos tiempos difíciles Re–Read se suma al mensaje de #yomequedoencasa por el bien común de la sociedad.</p>
             <h6 class="fw-bold">Reduce & Reuse & Read</h6>
             <p>Somos la librería Eco-Friendly — Re–Read nació pensando en verde con el objetivo de compartir una pasión, la lectura y para expresar una preocupación: si queremos construir un futuro sostenible, es necesario que reduzcamos el consumo y que reutilicemos cuantos más objetos materiales mejor.</p>
           </div>
+
+          <!-- Libros -->
           <div class="tab-pane fade" id="libros" role="tabpanel" aria-labelledby="libros-tab">
-            <p class="mt-3">Aquí aparecerán los libros disponibles.</p>
+            <h5 class="fw-bold mt-3">Todos los libros tienen el mismo precio</h5>
+            <p>Libros casi nuevos a un precio casi imposible.</p>
+            <div class="libros-imgs">
+              <img src="./img/1-libro-3€.gif" alt="1 libro 3€">
+              <img src="./img/2-libros-5€.gif" alt="2 libros 5€">
+              <img src="./img/5-libros-10€.gif" alt="5 libros 10€">
+            </div>
+            <p class="fw-bold">¿Te cambias de piso? ¿Tienes que vaciar la casa? ¿O sencillamente necesitas algo más de espacio?</p>
+            <p>En Re-Read compramos tus libros para darles una segunda vida. Los compramos todos al mismo precio: 0,20 euros. Siempre hay libros leídos y libros por leer. Por eso Re-compramos y Re-vendemos para que nunca te quedes sin ninguno de los dos.</p>
           </div>
+
+          <!-- eBooks -->
           <div class="tab-pane fade" id="ebooks" role="tabpanel" aria-labelledby="ebooks-tab">
             <p class="mt-3">Sección de ebooks y libros digitales.</p>
           </div>
